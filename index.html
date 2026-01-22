@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Basiturraza | The Techie BFF</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        love: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                        },
+                        vibe: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            900: '#4c1d95',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .blob-shape {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+
+            0%,
+            100% {
+                border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            }
+
+            34% {
+                border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+            }
+
+            67% {
+                border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+            }
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8b5cf6;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7c3aed;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-700 antialiased overflow-x-hidden selection:bg-vibe-200 selection:text-vibe-900">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 py-4" id="navbar">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#"
+                class="text-2xl font-display font-bold text-vibe-900 tracking-wide hover:scale-105 transition-transform">
+                Rent <span class="text-love-500">Basit.</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 font-bold text-sm text-slate-500">
+                <a href="#why-me" class="hover:text-vibe-600 transition">Why Me?</a>
+                <a href="#portfolio" class="hover:text-vibe-600 transition">Proof I Work</a>
+                <a href="#faq" class="hover:text-vibe-600 transition">FAQs</a>
+            </div>
+
+            <a href="#booking"
+                class="bg-vibe-900 text-white px-6 py-2.5 rounded-full font-bold hover:bg-vibe-600 transition shadow-lg hover:shadow-vibe-500/30 text-sm flex items-center gap-2 group">
+                <span>Book Now</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute top-10 left-[-10%] w-96 h-96 bg-vibe-500 opacity-10 blob-shape blur-3xl"></div>
+        <div
+            class="absolute bottom-20 right-[-5%] w-[35rem] h-[35rem] bg-love-500 opacity-10 blob-shape blur-3xl animation-delay-2000">
+        </div>
+
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="text-center lg:text-left space-y-6">
+                <div
+                    class="hero-el inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-vibe-100 text-vibe-900 text-xs font-bold shadow-sm uppercase tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    Available for Work & Friendship
+                </div>
+                <h1 class="hero-el text-5xl lg:text-7xl font-display font-bold leading-[1.1] text-slate-900">
+                    Your Techie. <br />
+                    Your Designer. <br />
+                    Your <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-love-500 to-vibe-600">Bestie.</span>
+                </h1>
+                <p class="hero-el text-xl text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                    Hi, I'm <strong>Basiturraza</strong>. I combine professional design skills (Adobe/Corel) with coding
+                    logic (C++/JS). Rent me to fix your bugs, design your brand, or just listen to your problems.
+                </p>
+
+                <div class="hero-el flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#pricing"
+                        class="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        View Rates
+                    </a>
+                    <a href="https://t.me/briixiio" target="_blank"
+                        class="px-8 py-4 bg-white text-vibe-900 border-2 border-slate-100 rounded-2xl font-bold hover:border-vibe-200 hover:bg-vibe-50 transition-all duration-300 flex items-center gap-2">
+                        <i class="fab fa-telegram text-vibe-500"></i> Chat Now
+                    </a>
+                </div>
+
+                <div
+                    class="hero-el pt-6 flex items-center justify-center lg:justify-start gap-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                    <span><i class="fas fa-map-marker-alt text-love-500 mr-1"></i> Nagpur</span>
+                    <span>•</span>
+                    <span><i class="fas fa-graduation-cap text-vibe-500 mr-1"></i> BCA '26</span>
+                </div>
+            </div>
+
+            <div class="py-10 hero-card relative mx-auto w-full max-w-md perspective-1000">
+                <div
+                    class="absolute -right-8 top-20 bg-white p-3 rounded-xl shadow-lg animate-bounce z-20 hidden md:block">
+                    <span class="text-2xl">💻</span>
+                </div>
+                <div
+                    class="absolute -left-8 bottom-32 bg-white p-3 rounded-xl shadow-lg animate-bounce animation-delay-500 z-20 hidden md:block">
+                    <span class="text-2xl">🎨</span>
+                </div>
+
+                <div class="relative bg-white/60 backdrop-blur-xl rounded-[2.5rem] p-6 shadow-2xl border border-white">
+                    <div
+                        class="bg-gradient-to-b from-slate-100 to-white rounded-[2rem] p-6 text-center border border-slate-100">
+                        <div
+                            class="w-24 h-24 mx-auto rounded-full bg-slate-200 overflow-hidden border-4 border-white shadow-md mb-4 relative">
+                            <img src="me.png" alt="Basit"
+                                class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-slate-900">Basiturraza Taji</h3>
+                        <p class="text-vibe-500 font-bold text-sm mb-4">@briixiio</p>
+
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <p class="text-xs text-slate-400 font-bold uppercase">Role</p>
+                                <p class="font-bold text-slate-700">Developer</p>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <p class="text-xs text-slate-400 font-bold uppercase">Exp</p>
+                                <p class="font-bold text-slate-700">Life</p>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full py-3 bg-vibe-500 text-white rounded-xl font-bold hover:bg-vibe-600 transition shadow-lg shadow-vibe-500/20">
+                            Available Today
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-10 bg-white border-y border-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center md:justify-between gap-8 text-center md:text-left items-center"
+                id="stats-container">
+                <div class="stat-item flex items-center gap-4">
+                    <div class="text-3xl text-vibe-200"><i class="fas fa-code"></i></div>
+                    <div>
+                        <div class="text-2xl font-bold text-slate-800"><span class="counter" data-target="2026">0</span>
+                        </div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Graduation Year</div>
+                    </div>
+                </div>
+                <div class="stat-item flex items-center gap-4">
+                    <div class="text-3xl text-love-200"><i class="fas fa-heart"></i></div>
+                    <div>
+                        <div class="text-2xl font-bold text-slate-800"><span class="counter" data-target="100">0</span>%
+                        </div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Client Satisfaction</div>
+                    </div>
+                </div>
+                <div class="stat-item flex items-center gap-4">
+                    <div class="text-3xl text-blue-200"><i class="fas fa-layer-group"></i></div>
+                    <div>
+                        <div class="text-2xl font-bold text-slate-800"><span class="counter" data-target="15">0</span>+
+                        </div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Projects Done</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-me" class="py-24 bg-vibe-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-slate-800 mb-4">Why I'm The Ultimate Rental
+                </h2>
+                <p class="text-slate-500">I bring the perfect balance of geeky technical skills and actual social
+                    awareness.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="reveal-up bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-14 h-14 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tech Wizardry</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Need a website? I know <strong>HTML, CSS, JS</strong>. Need logic? I know <strong>C++ &
+                            Python</strong>. Need your printer fixed? I can try (no promises).
+                    </p>
+                </div>
+
+                <div
+                    class="reveal-up bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition duration-300 md:mt-8">
+                    <div
+                        class="w-14 h-14 bg-pink-50 text-pink-500 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Design Eye</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Experience with <strong>Adobe Creative Suite</strong> and <strong>CorelDRAW</strong>. I can make
+                        your resume, flyers, or Instagram stories look aesthetic AF.
+                    </p>
+                </div>
+
+                <div
+                    class="reveal-up bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-14 h-14 bg-yellow-50 text-yellow-500 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Soft Skills</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        I'm fluent in English & Hindi. I practice effective communication and team collaboration.
+                        Basically, I'm easy to work with.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-slate-800 mb-2">The Evidence 📂</h2>
+                    <p class="text-slate-500">I don't just talk. I actually do stuff.</p>
+                </div>
+                <div class="hidden md:block">
+                    <span class="text-xs font-bold text-vibe-500 uppercase tracking-widest">Selected Works</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="reveal-up group relative overflow-hidden rounded-3xl bg-slate-900 text-white h-80 flex flex-col justify-end p-8 border border-slate-800">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-blue-600 opacity-20 group-hover:opacity-30 transition duration-500 transform group-hover:scale-105">
+                    </div>
+
+                    <div class="relative z-20 translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <div class="mb-2 text-blue-400 text-xs font-bold uppercase tracking-wider">Internship • VMV
+                            College</div>
+                        <h3 class="text-2xl font-bold mb-2">Web Development</h3>
+                        <p
+                            class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500 delay-100">
+                            Developed responsive user interfaces using modern JavaScript frameworks. Crushed deadlines
+                            and studied user requirements like a pro.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal-up group relative overflow-hidden rounded-3xl bg-slate-900 text-white h-80 flex flex-col justify-end p-8 border border-slate-800">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-pink-600 opacity-20 group-hover:opacity-30 transition duration-500 transform group-hover:scale-105">
+                    </div>
+
+                    <div class="relative z-20 translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <div class="mb-2 text-pink-400 text-xs font-bold uppercase tracking-wider">Work • Caliber's Nova
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Desktop Publishing</h3>
+                        <p
+                            class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500 delay-100">
+                            Combined technical skills with creativity using Adobe tools and CorelDRAW for daily design
+                            efficiency.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal-up group relative overflow-hidden rounded-3xl bg-slate-900 text-white h-80 flex flex-col justify-end p-8 border border-slate-800">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-purple-600 opacity-20 group-hover:opacity-30 transition duration-500 transform group-hover:scale-105">
+                    </div>
+
+                    <div class="relative z-20 translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <div class="mb-2 text-purple-400 text-xs font-bold uppercase tracking-wider">Creative •
+                            Freelance</div>
+                        <h3 class="text-2xl font-bold mb-2">Video Editing</h3>
+                        <p
+                            class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500 delay-100">
+                            Transforming raw footage into cinematic stories. I handle cuts, color grading, and motion
+                            graphics to make content pop.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal-up group relative overflow-hidden rounded-3xl bg-slate-900 text-white h-80 flex flex-col justify-end p-8 border border-slate-800">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-yellow-600 opacity-20 group-hover:opacity-30 transition duration-500 transform group-hover:scale-105">
+                    </div>
+
+                    <div class="relative z-20 translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <div class="mb-2 text-yellow-400 text-xs font-bold uppercase tracking-wider">Leadership • VMV
+                            College</div>
+                        <h3 class="text-2xl font-bold mb-2">Tech Fest Organizer</h3>
+                        <p
+                            class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500 delay-100">
+                            Key member of the Tech Fest team. Managed logistics, coordinated events, and ensured the
+                            event ran smoother than my code.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50 overflow-hidden relative">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wNSkiLz48L3N2Zz4=')] opacity-50">
+        </div>
+
+        <div class="container mx-auto px-6 text-center mb-16 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-display font-bold text-slate-800 mb-4">Vibe Check ✅</h2>
+            <p class="text-slate-500">Real reviews from real humans (and one very supportive aunt).</p>
+        </div>
+
+        <div class="relative flex overflow-x-hidden group pb-12">
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10"></div>
+
+            <div class="animate-marquee whitespace-nowrap flex gap-6 items-center">
+
+                <div
+                    class="w-96 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 inline-block whitespace-normal hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+                            class="w-10 h-10 rounded-full bg-blue-50" alt="Avatar">
+                        <div>
+                            <p class="font-bold text-sm text-slate-900">Happy Client</p>
+                            <p class="text-xs text-slate-400">@relieved_guy</p>
+                        </div>
+                        <div class="ml-auto text-yellow-400 text-xs">★★★★★</div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">"Basit fixed my laptop AND listened to me complain
+                        about my ex for 45 minutes. A true multi-tasker. Worth every rupee."</p>
+                </div>
+
+                <div
+                    class="w-96 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 inline-block whitespace-normal hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Jessica"
+                            class="w-10 h-10 rounded-full bg-pink-50" alt="Avatar">
+                        <div>
+                            <p class="font-bold text-sm text-slate-900">Ex-Colleague</p>
+                            <p class="text-xs text-slate-400">Caliber's Nova</p>
+                        </div>
+                        <div class="ml-auto text-yellow-400 text-xs">★★★★★</div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">"His design skills are actually legit. The flyer
+                        he made was crisp. Also, he brings good snacks to the office."</p>
+                </div>
+
+                <div
+                    class="w-96 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 inline-block whitespace-normal hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+                            class="w-10 h-10 rounded-full bg-purple-50" alt="Avatar">
+                        <div>
+                            <p class="font-bold text-sm text-slate-900">Sarah K.</p>
+                            <p class="text-xs text-slate-400">Wedding Client</p>
+                        </div>
+                        <div class="ml-auto text-yellow-400 text-xs">★★★★★</div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">"I rented him as my +1. He dressed better than the
+                        groom and charmed my grandma. 10/10 would rent again."</p>
+                </div>
+
+                <div
+                    class="w-96 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 inline-block whitespace-normal hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul"
+                            class="w-10 h-10 rounded-full bg-orange-50" alt="Avatar">
+                        <div>
+                            <p class="font-bold text-sm text-slate-900">Tech Lead</p>
+                            <p class="text-xs text-slate-400">@nagpur_techie</p>
+                        </div>
+                        <div class="ml-auto text-yellow-400 text-xs">★★★★★</div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">"Knows Python. Knows Hindi. Knows exactly where
+                        the best Tarri Poha in Nagpur is. Hired him immediately."</p>
+                </div>
+
+                <div
+                    class="w-96 bg-white p-6 rounded-3xl shadow-sm border border-red-100 inline-block whitespace-normal hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute -right-4 -top-4 bg-red-500 text-white text-[10px] font-bold px-6 py-1 rotate-45">
+                        MOM</div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Granny"
+                            class="w-10 h-10 rounded-full bg-red-50" alt="Avatar">
+                        <div>
+                            <p class="font-bold text-sm text-slate-900">Mom</p>
+                            <p class="text-xs text-slate-400">@basit_mom</p>
+                        </div>
+                        <div class="ml-auto text-yellow-400 text-xs">★★★★☆</div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">"He is a good boy but spends too much time on
+                        computer. 4 stars because he didn't eat his lunch today."</p>
+                </div>
+
+                <div
+                    class="w-96 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 inline-block whitespace-normal hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Jack"
+                            class="w-10 h-10 rounded-full bg-green-50" alt="Avatar">
+                        <div>
+                            <p class="font-bold text-sm text-slate-900">DevManager</p>
+                            <p class="text-xs text-slate-400">@startup_life</p>
+                        </div>
+                        <div class="ml-auto text-yellow-400 text-xs">★★★★★</div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">"He debugged my C++ code while eating a Samosa and
+                        didn't drop a single crumb on the keyboard. That is pure talent."</p>
+                </div>
+
+                <div
+                    class="w-96 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 inline-block whitespace-normal hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+                            class="w-10 h-10 rounded-full bg-blue-50" alt="Avatar">
+                        <div>
+                            <p class="font-bold text-sm text-slate-900">Happy Client</p>
+                            <p class="text-xs text-slate-400">@relieved_guy</p>
+                        </div>
+                        <div class="ml-auto text-yellow-400 text-xs">★★★★★</div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">"Basit fixed my laptop AND listened to me complain
+                        about my ex for 45 minutes. A true multi-tasker. Worth every rupee."</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-love-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-vibe-500/10 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+
+                <div class="reveal-right">
+                    <h2 class="text-3xl md:text-5xl font-display font-bold mb-4 text-love-500">The "Hard No" List 🚫
+                    </h2>
+                    <p class="text-slate-400 mb-10 text-lg">I am fun, but I am not a magician or a criminal. Here are my
+                        boundaries.</p>
+
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/5 hover:bg-white/10 transition duration-300">
+                            <div
+                                class="w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                                <i class="fas fa-user-secret"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-red-200">Hack your ex's Instagram</h4>
+                                <p class="text-xs text-slate-400 mt-1">I value ethics. Also, I don't know their
+                                    password. Also, please move on.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/5 hover:bg-white/10 transition duration-300">
+                            <div
+                                class="w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-red-200">Lend you money</h4>
+                                <p class="text-xs text-slate-400 mt-1">I am a student. My bank balance is basically a
+                                    binary number (mostly zeros).</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/5 hover:bg-white/10 transition duration-300">
+                            <div
+                                class="w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                                <i class="fas fa-print"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-red-200">Fix your Printer</h4>
+                                <p class="text-xs text-slate-400 mt-1">I write code. I do not exorcise demons from
+                                    hardware. Printers are evil.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-4 bg-emerald-500/10 p-4 rounded-2xl border border-emerald-500/20 hover:bg-emerald-500/20 transition duration-300 mt-6">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-emerald-200">Build a cool website?</h4>
+                                <p class="text-xs text-emerald-100/70 mt-1">Absolutely. I will design it, code it, and
+                                    make it look expensive.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-left sticky top-24">
+                    <div
+                        class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-[2rem] p-8 border border-slate-700 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-love-500/20 rotate-[-2deg] backdrop-blur-sm flex items-center justify-center text-love-600 text-sm font-semibold tracking-wide select-none">
+                            You found me!
+                        </div>
+
+
+                        <div class="text-center pt-8">
+                            <div class="text-6xl mb-6">🤝</div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Terms of Friendship</h3>
+                            <p class="text-slate-400 text-sm mb-8 px-4">
+                                By renting Basit, you agree that he is a <span class="text-love-400 font-bold">Platonic
+                                    Professional™</span>.
+                                <br /><br />
+                                He functions as a brother you actually like, or a tech-friend who never ghosts you. He
+                                is not a bodyguard, a therapist, or a bank.
+                            </p>
+
+                            <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-700 text-left">
+                                <div class="flex justify-between text-xs text-slate-500 uppercase tracking-widest mb-2">
+                                    <span>Signature</span>
+                                    <span>Date</span>
+                                </div>
+                                <div
+                                    class="flex justify-between items-end font-handwriting text-xl text-white/80 font-display">
+                                    <span class="font-bold italic text-vibe-400">Basiturraza Taji</span>
+                                    <span class="text-sm font-sans text-slate-400">Today</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-gradient-to-b from-white to-vibe-50/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <div
+                    class="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-700 font-bold text-xs uppercase tracking-wide mb-4">
+                    High ROI Guaranteed
+                </div>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-slate-800 mb-4">Invest in Your Social Life
+                    (or Website)</h2>
+                <p class="text-slate-500 text-lg">Cheaper than therapy. More useful than a goldfish. <br
+                        class="hidden md:block" /> Pick a plan that fits your current level of desperation.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+
+                <div
+                    class="pricing-card bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100 relative group hover:border-vibe-300 transition-all duration-300 hover:-translate-y-2">
+                    <h3 class="text-xl font-bold text-slate-800">The "Vibe Check"</h3>
+                    <p class="text-xs text-slate-400 mt-1 uppercase font-bold">Casual Hangout</p>
+                    <div class="my-6">
+                        <span class="text-4xl font-display font-bold text-slate-800">₹499</span>
+                        <span class="text-slate-500">/ hour</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-mug-hot text-vibe-500 mt-1"></i>
+                            <span><strong>Casual Coffee/Chai</strong> (You buy, I sip)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-brain text-vibe-500 mt-1"></i>
+                            <span><strong>Tech Rant Listener</strong> (Vent about bugs)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-smile text-vibe-500 mt-1"></i>
+                            <span><strong>1 Ego Boost</strong> ("Wow, you're so smart")</span>
+                        </li>
+                    </ul>
+                    <a href="https://t.me/briixiio"
+                        class="block text-center w-full py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold group-hover:border-vibe-500 group-hover:text-vibe-600 transition">Book
+                        This</a>
+                </div>
+
+                <div
+                    class="pricing-card bg-white p-10 rounded-[2.5rem] shadow-2xl border-2 border-vibe-500 relative transform md:scale-110 z-10">
+
+                    
+                    <div
+                        class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-vibe-600 to-love-500 text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg whitespace-nowrap">
+                        🔥 Most Popular
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-slate-800">The "Legendary +1"</h3>
+                    <p class="text-xs text-slate-400 mt-1 uppercase font-bold">Events, Parties & Weddings</p>
+                    <div class="my-6">
+                        <span class="text-5xl font-display font-bold text-vibe-600">₹1,499</span>
+                        <span class="text-slate-500">/ 3 hrs</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 text-green-500"><i class="fas fa-check-circle"></i></div>
+                            <span><strong>Wedding Guest Mode:</strong> I dress well & dance badly (on purpose).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 text-green-500"><i class="fas fa-check-circle"></i></div>
+                            <span><strong>Fake Backstory:</strong> "We met while saving dolphins in Bali."</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 text-green-500"><i class="fas fa-check-circle"></i></div>
+                            <span><strong>Designated Bag Holder</strong> while you take photos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 text-green-500"><i class="fas fa-check-circle"></i></div>
+                            <span><strong>Ex-Jealousy Protocol</strong> (Optional).</span>
+                        </li>
+                    </ul>
+                    <a href="https://t.me/briixiio"
+                        class="block text-center w-full py-4 rounded-xl bg-vibe-900 text-white font-bold shadow-xl hover:shadow-2xl hover:bg-vibe-800 transition transform hover:-translate-y-1">Get
+                        The Vibe</a>
+                </div>
+
+                <div
+                    class="pricing-card bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100 relative group hover:border-love-300 transition-all duration-300 hover:-translate-y-2">
+                    <h3 class="text-xl font-bold text-slate-800">The "Serious Dev"</h3>
+                    <p class="text-xs text-slate-400 mt-1 uppercase font-bold">Actually Building Stuff</p>
+                    <div class="my-6">
+                        <span class="text-4xl font-display font-bold text-slate-800">₹2,999</span>
+                        <span class="text-slate-500">/ starts at</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-code text-love-500 mt-1"></i>
+                            <span><strong>Full Website Design</strong> (HTML/CSS/JS)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-ban text-love-500 mt-1"></i>
+                            <span><strong>No Comic Sans Guarantee</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-magic text-love-500 mt-1"></i>
+                            <span><strong>Logo & Branding</strong> included.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-infinity text-love-500 mt-1"></i>
+                            <span><strong>Unlimited Revisions</strong> (Within reason, bro).</span>
+                        </li>
+                    </ul>
+                    <a href="https://t.me/briixiio"
+                        class="block text-center w-full py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold group-hover:border-love-500 group-hover:text-love-600 transition">Hire
+                        Me</a>
+                </div>
+
+            </div>
+
+            <div class="mt-16 text-center">
+                <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-2">Money Back Guarantee*</p>
+                <p class="text-xs text-slate-300 max-w-lg mx-auto italic">
+                    *If you don't have fun, I will refund you in "Basit Bucks" which are valid nowhere and have
+                    absolutely no monetary value. Terms and conditions apply (mostly depending on my mood).
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-display font-bold text-center mb-12">Questions I Get Asked (Frequently)</h2>
+
+            <div class="space-y-4">
+                <details
+                    class="group bg-white p-6 rounded-2xl cursor-pointer open:ring-2 open:ring-vibe-100 transition-all shadow-sm">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none text-slate-800">
+                        <span>Are you actually a developer?</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        Yes! I am a final year BCA student. I have real experience working at Caliber's Nova and
+                        interning at VMV College. This website is a joke, but my code is serious.
+                    </p>
+                </details>
+
+                <details
+                    class="group bg-white p-6 rounded-2xl cursor-pointer open:ring-2 open:ring-vibe-100 transition-all shadow-sm">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none text-slate-800">
+                        <span>Can you fix my printer?</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        Look, I write code. I don't whisper to hardware. But if you restart it 3 times and it works, I
+                        will take full credit for "hacking" it.
+                    </p>
+                </details>
+
+                <details
+                    class="group bg-white p-6 rounded-2xl cursor-pointer open:ring-2 open:ring-vibe-100 transition-all shadow-sm">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none text-slate-800">
+                        <span>Can I rent you to make my ex jealous?</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        Absolutely. I have a "Longing Stare" package. I will laugh at your jokes very loudly and hold
+                        your purse like a gentleman.
+                    </p>
+                </details>
+
+                <details
+                    class="group bg-white p-6 rounded-2xl cursor-pointer open:ring-2 open:ring-vibe-100 transition-all shadow-sm">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none text-slate-800">
+                        <span>Can you "make the logo bigger"?</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        I can, but I might cry a little. I prefer clean design (like this website), but hey, the
+                        customer is always right... mostly.
+                    </p>
+                </details>
+
+                <details
+                    class="group bg-white p-6 rounded-2xl cursor-pointer open:ring-2 open:ring-vibe-100 transition-all shadow-sm">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none text-slate-800">
+                        <span>Do you accept Bitcoin?</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        I prefer UPI, Cash, or a plate of <strong>Nagpur's famous Tarri Poha</strong>. If the Poha is
+                        good, I might give you a discount.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="booking" class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-vibe-900 rounded-[2.5rem] p-8 md:p-12 text-center text-white relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvc3ZnPg==')] opacity-20">
+                </div>
+
+                <h2 class="text-3xl md:text-5xl font-display font-bold mb-6 relative z-10">Ready to Rent?</h2>
+                <p class="text-vibe-200 mb-8 max-w-lg mx-auto relative z-10">Send me a message. Tell me if you need a
+                    website, a wingman, or tech support.</p>
+
+                <div class="flex flex-col md:flex-row justify-center gap-4 relative z-10">
+                    <a href="mailto:basiturraza@gmail.com"
+                        class="px-8 py-4 bg-white text-vibe-900 rounded-xl font-bold hover:bg-slate-100 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-envelope"></i> Email Me
+                    </a>
+                    <a href="https://t.me/briixiio" target="_blank"
+                        class="px-8 py-4 bg-love-500 text-white rounded-xl font-bold hover:bg-love-600 transition flex items-center justify-center gap-2">
+                        <i class="fab fa-telegram"></i> Telegram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<footer class="bg-slate-900 text-white py-16 border-t border-slate-800 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-vibe-500 to-transparent opacity-50"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-love-500/5 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center md:text-left">
+                
+                <div class="col-span-1 lg:col-span-2">
+                    <h2 class="text-3xl font-display font-bold mb-4">Basiturraza Taji</h2>
+                    <p class="text-slate-400 max-w-sm mx-auto md:mx-0 leading-relaxed mb-6">
+                        The developer you need. The bestie you deserve. 
+                        Currently accepting freelance projects, job offers, and free food.
+                    </p>
+                    <div class="flex justify-center md:justify-start gap-4">
+                        <a href="https://t.me/briixiio" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="mailto:basiturraza@gmail.com" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-red-400 hover:bg-red-500 hover:text-white transition-all duration-300">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+919022695311" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-green-400 hover:bg-green-500 hover:text-white transition-all duration-300">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-white mb-4 uppercase tracking-wider text-xs">Navigation</h3>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#why-me" class="hover:text-vibe-400 transition">Why Me?</a></li>
+                        <li><a href="#portfolio" class="hover:text-vibe-400 transition">Portfolio</a></li>
+                        <li><a href="#pricing" class="hover:text-vibe-400 transition">Pricing</a></li>
+                        <li><a href="#faq" class="hover:text-vibe-400 transition">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-white mb-4 uppercase tracking-wider text-xs">Legal Stuff</h3>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><span class="cursor-help hover:text-love-400 transition" title="I just really like cookies.">Cookie Policy 🍪</span></li>
+                        <li><span class="cursor-help hover:text-love-400 transition" title="Please be nice to me.">Terms of Friendship</span></li>
+                        <li><span class="cursor-help hover:text-love-400 transition" title="I promise not to share your secrets.">Privacy Promise</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 Basiturraza Taji. Made with 💜 (and Tarri Poha) in Nagpur.</p>
+                
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="group flex items-center gap-2 hover:text-white transition">
+                    <span>Back to Top</span>
+                    <i class="fas fa-arrow-up group-hover:-translate-y-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Navbar Glass Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('glass-panel');
+                } else {
+                    navbar.classList.remove('glass-panel');
+                }
+            });
+
+            // 2. Hero Animations
+            const tl = anime.timeline({ easing: 'easeOutExpo', duration: 1000 });
+            tl.add({
+                targets: '.hero-el',
+                translateY: [50, 0],
+                opacity: [0, 1],
+                delay: anime.stagger(150),
+                duration: 1200
+            })
+                .add({
+                    targets: '.hero-card',
+                    translateY: [100, 0],
+                    opacity: [0, 1],
+                    rotate: ['5deg', '0deg'],
+                    duration: 1500
+                }, '-=1000');
+
+            // 3. Stats Counter
+            const statsSection = document.getElementById('stats-container');
+            let statsAnimated = false;
+
+            const animateStats = () => {
+                const counters = document.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    anime({
+                        targets: counter,
+                        innerHTML: [0, target],
+                        easing: 'easeOutExpo',
+                        round: 1,
+                        duration: 2500
+                    });
+                });
+            };
+
+            // 4. Scroll Reveal
+            const revealCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id === 'stats-container' && !statsAnimated) {
+                            animateStats();
+                            statsAnimated = true;
+                        }
+                        if (entry.target.classList.contains('reveal-up')) {
+                            anime({
+                                targets: entry.target,
+                                translateY: [50, 0],
+                                opacity: [0, 1],
+                                easing: 'spring(1, 80, 10, 0)',
+                                delay: anime.random(0, 200)
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                        if (entry.target.classList.contains('pricing-card')) {
+                            anime({
+                                targets: entry.target,
+                                scale: [0.9, 1],
+                                opacity: [0, 1],
+                                easing: 'easeOutElastic(1, .6)',
+                                delay: 100
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                        if (entry.target.classList.contains('reveal-right')) {
+                            anime({
+                                targets: entry.target,
+                                translateX: [-50, 0],
+                                opacity: [0, 1],
+                                easing: 'easeOutExpo',
+                                duration: 1000
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(revealCallback, { threshold: 0.15 });
+            observer.observe(statsSection);
+            document.querySelectorAll('.reveal-up, .pricing-card, .reveal-right').forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+        });
+    </script>
+    <style>
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+    </style>
+</body>
+
+</html>
